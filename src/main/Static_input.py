@@ -10,6 +10,9 @@ mp_holistic = mp.solutions.holistic
 left_hand_point_indecies = [mp_holistic.PoseLandmark.LEFT_ELBOW, mp_holistic.PoseLandmark.LEFT_WRIST, mp_holistic.PoseLandmark.LEFT_INDEX]
 right_hand_point_indecies = [mp_holistic.PoseLandmark.RIGHT_ELBOW, mp_holistic.PoseLandmark.RIGHT_WRIST, mp_holistic.PoseLandmark.RIGHT_INDEX] 
 
+left_hand_world_landmarks = []
+right_hand_world_landmarks = []
+
 IMAGE_FILE = ""
 
 with mp_holistic.Holistic(
@@ -21,17 +24,20 @@ with mp_holistic.Holistic(
     image = cv2.imread(IMAGE_FILE)
     image_height, image_width, _ = image.shape
     results = holistic.process(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
-        
     
     if results.pose_world_landmarks:
+        world_landmarks = results.pose_world_landmarks.landmark
+        
         if results.left_hand_landmarks:
             for point_index in left_hand_point_indecies:
-                left_elbow = results.pose_world_landmarks.landmark[point_index]
+                denormalized_world_coordinates = utilities.denormalize(utilities.get_world_coordinates(world_landmarks, point_index))
+                left_hand_world_landmarks.append(denormalized_world_coordinates)
+                
                 
                 
                 
         if results.right_hand_landmarks:
             for point_index in right_hand_point_indecies:
-                
+                pass
         
         
