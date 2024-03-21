@@ -5,6 +5,8 @@
 coordinates: tuple (x, y, z) representing the location of a point of interest
 landmarks: list of coordinates
 
+Using Mediapipe: 0.10.9
+
 ![Pose Landmarks](https://github.com/LeeeonFan/Praxis2/blob/main/src/resources/pose-landmarks.jpg?raw=true)
 Google Colab: Key Points of Pose
  https://blog.research.google/2020/08/on-device-real-time-body-pose-tracking.html
@@ -14,6 +16,7 @@ MediaPipe: Key Points of Hand
 https://developers.google.com/mediapipe/solutions/vision/hand_landmarker
 
 ## Static input:
-Mediapipe: 0.10.9
+use numpy to store data
+
 ## Webcam input:
 
