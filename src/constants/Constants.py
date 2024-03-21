@@ -11,15 +11,15 @@ LEFT_WRIST_JOINTS_IDX = [mp_holistic.PoseLandmark.LEFT_ELBOW, mp_holistic.PoseLa
 IDX_RIGHT_WRIST_JOINTS = [mp_holistic.PoseLandmark.RIGHT_ELBOW, mp_holistic.PoseLandmark.RIGHT_WRIST, mp_holistic.PoseLandmark.RIGHT_INDEX] 
 
 # DIP joints
-INDEX_DIP_JOINTS_IDX = [mp.holistic.HandLandmark.INDEX_FINGER_PIP, mp.holistic.HandLandmark.INDEX_FINGER_DIP, mp.holistic.HandLandmark.INDEX_FINGER_TIP]
-MIDDLE_DIP_JOINTS_IDX = [mp.holistic.HandLandmark.MIDDLE_FINGER_PIP, mp.holistic.HandLandmark.MIDDLE_FINGER_DIP, mp.holistic.HandLandmark.MIDDLE_FINGER_TIP]
-RING_DIP_JOINTS_IDX = [mp.holistic.HandLandmark.RING_FINGER_PIP, mp.holistic.HandLandmark.RING_FINGER_DIP, mp.holistic.HandLandmark.RING_FINGER_TIP]
-PINKY_DIP_JOINTS_IDX = [mp.holistic.HandLandmark.PINKY_PIP, mp.holistic.HandLandmark.PINKY_DIP, mp.holistic.HandLandmark.PINKY_TIP]
+INDEX_DIP_JOINTS_IDX = [mp_holistic.HandLandmark.INDEX_FINGER_PIP, mp_holistic.HandLandmark.INDEX_FINGER_DIP, mp_holistic.HandLandmark.INDEX_FINGER_TIP]
+MIDDLE_DIP_JOINTS_IDX = [mp_holistic.HandLandmark.MIDDLE_FINGER_PIP, mp_holistic.HandLandmark.MIDDLE_FINGER_DIP, mp_holistic.HandLandmark.MIDDLE_FINGER_TIP]
+RING_DIP_JOINTS_IDX = [mp_holistic.HandLandmark.RING_FINGER_PIP, mp_holistic.HandLandmark.RING_FINGER_DIP, mp_holistic.HandLandmark.RING_FINGER_TIP]
+PINKY_DIP_JOINTS_IDX = [mp_holistic.HandLandmark.PINKY_PIP, mp_holistic.HandLandmark.PINKY_DIP, mp_holistic.HandLandmark.PINKY_TIP]
 
-# Wrist posture
-MAX_WRIST_EXTENSION_ANGLE = 0
-MAX_WRIST_FLEXION_ANGLE = 0
-EPSILON_Z = 0
+# Wrist posture (unit: degrees, meter)
+MAX_WRIST_EXTENSION_ANGLE = 30
+MAX_WRIST_FLEXION_ANGLE = 30
+EPSILON_Z = 0.1
 
 # Finger posture
-MAX_DIP_ANGLE = 0
+MAX_DIP_ANGLE = 30
