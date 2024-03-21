@@ -14,6 +14,6 @@ MediaPipe: Key Points of Hand
 https://developers.google.com/mediapipe/solutions/vision/hand_landmarker
 
 ## Static input:
-
+Mediapipe: 0.10.9
 ## Webcam input:
 
