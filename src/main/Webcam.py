@@ -144,7 +144,7 @@ with mp_holistic.Holistic(
             mp_drawing_styles.get_default_hand_connections_style())
 
 
-    # display annotated image
+    # display annotated image, click esc to exit
     cv2.imshow("Annotated Image", annotated_image)
     if cv2.waitKey(5) & 0xFF == 27:
       break

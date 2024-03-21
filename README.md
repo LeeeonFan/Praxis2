@@ -1,22 +1,32 @@
 # Praxis 2
 2024 ESC102 Praxis 2 Project
 
-## Terminology:
-coordinates: tuple (x, y, z) representing the location of a point of interest
-landmarks: list of coordinates
+## Terminology
 
-Using Mediapipe: 0.10.9
-
+- coordinates: \
+nomalized vector (x, y, z), where z in the distance to camera
+- coordinates_world: \
+normalized vector (x, y, z) in world coordinates
+- landmarks(_world):\
+ list of coordinates(_world)
+## Index of Key Points
+### Pose
 ![Pose Landmarks](https://github.com/LeeeonFan/Praxis2/blob/main/src/resources/pose-landmarks.jpg?raw=true)
 Google Colab: Key Points of Pose
  https://blog.research.google/2020/08/on-device-real-time-body-pose-tracking.html
 
+### Hand
 ![Hand Landmarks](https://github.com/LeeeonFan/Praxis2/blob/main/src/resources/hand-landmarks.png?raw=true)
-MediaPipe: Key Points of Hand
+MediaPipe: Key Points on Hand
 https://developers.google.com/mediapipe/solutions/vision/hand_landmarker
 
-## Static input:
-use numpy to store data
+## Feature
+### Static input
 
-## Webcam input:
+### Webcam input
+
+## Workplan
+1. Code refactoring for readbility
+2. Unify containers with numpy for efficiency
+3. Determine constants with tests
 
