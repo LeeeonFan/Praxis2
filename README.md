@@ -26,7 +26,10 @@ https://developers.google.com/mediapipe/solutions/vision/hand_landmarker
 ### Webcam input
 
 ## Workplan
-1. Code refactoring for readbility
-2. Unify containers with numpy for efficiency
-3. Determine constants with tests
+1. Refactor code for readbility
+2. Unify container types with numpy for efficiency
+3. Determine constants by testing
+4. Visualize output
+5. Posture log
+6. User interface
 
