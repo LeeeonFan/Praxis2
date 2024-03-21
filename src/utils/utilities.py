@@ -18,10 +18,10 @@ def check_DIP_buckling(DIP_angle):
     return DIP_angle > Constants.MAX_DIP_ANGLE
 
 # This function returns the angle in degrees. 
-def get_angle(lanmarks):
-    endpoint1_coordinates = lanmarks[0]
-    vertex_coordinates = lanmarks[1]
-    endpoint2_coordinates = lanmarks[2]
+def get_angle(landmarks):
+    endpoint1_coordinates = landmarks[0]
+    vertex_coordinates = landmarks[1]
+    endpoint2_coordinates = landmarks[2]
     
     vector1 = np.array([vertex_coordinates[0] - endpoint1_coordinates[0], vertex_coordinates[1] - endpoint1_coordinates[1]])
     vector2 = np.array([endpoint2_coordinates[0] - vertex_coordinates[0], endpoint2_coordinates[1] - vertex_coordinates[1]])
@@ -42,10 +42,10 @@ def get_angle(lanmarks):
     return angle
 
 # This function returns the angle in degrees. 
-def get_angle_world(lanmarks_world):
-    endpoint1_coordinates = lanmarks_world[0]
-    vertex_coordinates = lanmarks_world[1]
-    endpoint2_coordinates = lanmarks_world[2]
+def get_angle_world(landmarks_world):
+    endpoint1_coordinates = landmarks_world[0]
+    vertex_coordinates = landmarks_world[1]
+    endpoint2_coordinates = landmarks_world[2]
     
     vector1 = np.array([vertex_coordinates[0] - endpoint1_coordinates[0], vertex_coordinates[1] - endpoint1_coordinates[1], vertex_coordinates[2] - endpoint1_coordinates[2]])
     vector2 = np.array([endpoint2_coordinates[0] - vertex_coordinates[0], endpoint2_coordinates[1] - vertex_coordinates[1], endpoint2_coordinates[2] - vertex_coordinates[2]])
