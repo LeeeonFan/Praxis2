@@ -11,10 +11,10 @@ def get_hand_coordinates(hand_landmarks, joint_index):
     return hand_landmarks[joint_index].x, hand_landmarks[joint_index].y, hand_landmarks[joint_index].z
     
 
-def check_wrist(wrist_angle):
+def is_wrist_posture_correct(wrist_angle):
     return wrist_angle > min(Constants.MAX_WRIST_EXTENSION_ANGLE, Constants.MAX_WRIST_FLEXION_ANGLE)
     
-def check_DIP_buckling(DIP_angle):
+def is_DIP_bent(DIP_angle):
     return DIP_angle > Constants.MAX_DIP_ANGLE
 
 # This function returns the angle in degrees. 

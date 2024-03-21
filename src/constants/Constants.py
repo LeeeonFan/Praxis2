@@ -8,7 +8,7 @@ mp_holistic = mp.solutions.holistic
 LEFT_WRIST_JOINTS_IDX = [mp_holistic.PoseLandmark.LEFT_ELBOW, mp_holistic.PoseLandmark.LEFT_WRIST, mp_holistic.PoseLandmark.LEFT_INDEX]
 
 # Right hand joints
-IDX_RIGHT_WRIST_JOINTS = [mp_holistic.PoseLandmark.RIGHT_ELBOW, mp_holistic.PoseLandmark.RIGHT_WRIST, mp_holistic.PoseLandmark.RIGHT_INDEX] 
+RIGHT_WRIST_JOINTS_IDX = [mp_holistic.PoseLandmark.RIGHT_ELBOW, mp_holistic.PoseLandmark.RIGHT_WRIST, mp_holistic.PoseLandmark.RIGHT_INDEX] 
 
 # DIP joints
 INDEX_DIP_JOINTS_IDX = [mp_holistic.HandLandmark.INDEX_FINGER_PIP, mp_holistic.HandLandmark.INDEX_FINGER_DIP, mp_holistic.HandLandmark.INDEX_FINGER_TIP]
