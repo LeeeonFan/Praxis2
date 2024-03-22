@@ -22,9 +22,9 @@ https://developers.google.com/mediapipe/solutions/vision/hand_landmarker
 
 ## Feature
 ### Static input
-
+![Image output](./src/resources/output/static_output.png)
 ### Webcam input
-
+![Live stream output](./src/resources/output/dynamic_output.png)
 ## Workplan
 1. Refactor code for readbility
 2. Unify container types with numpy for efficiency
