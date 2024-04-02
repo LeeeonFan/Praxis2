@@ -21,8 +21,12 @@ def check_wrist_posture(results, hand='left'):
         wrist_angle = Utilities.get_angle_world(wrist_landmarks_world)
         if Utilities.is_wrist_posture_correct(wrist_angle):
             print(f'Fix {hand} wrist posture.\n')
+            
+
+            
 
 def check_DIP_posture(results):
+    
     # Define the finger joints
     finger_DIP_joints = {
         'index': Constants.INDEX_DIP_JOINTS_IDX,
@@ -49,3 +53,5 @@ def check_DIP_posture(results):
             finger_DIP_angle = Utilities.get_angle(finger_DIP_landmarks)
             if Utilities.is_DIP_bent(finger_DIP_angle):
                 print(f'Fix right {finger} finger posture.\n')
+
+                

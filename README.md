@@ -4,7 +4,7 @@
 ## Terminology
 
 - coordinates: \
-nomalized vector (x, y, z), where z in the distance to camera
+nomalized vector (x, y, z), where z is the distance to camera
 - coordinates_world: \
 normalized vector (x, y, z) in world coordinates
 - landmarks(_world):\

@@ -2,6 +2,8 @@ import cv2
 import mediapipe as mp
 
 import Checker
+import Illustrater
+
 
 mp_drawing = mp.solutions.drawing_utils
 mp_drawing_styles = mp.solutions.drawing_styles
@@ -22,7 +24,7 @@ with mp_holistic.Holistic(
     image_height, image_width, _ = image.shape
     results = holistic.process(cv2.cvtColor(image, cv2.COLOR_BGR2RGB))
 
-    # check hand posture
+    # check hand posture and get feedbackx
     if results.left_hand_landmarks:
         Checker.check_wrist_posture(results, hand='left')
     if results.right_hand_landmarks:
@@ -32,20 +34,9 @@ with mp_holistic.Holistic(
         
     # draw landmarks
     annotated_image = image.copy()
-    if results.left_hand_landmarks:
-        mp_drawing.draw_landmarks(
-            annotated_image,
-            results.left_hand_landmarks,
-            mp_holistic.HAND_CONNECTIONS,
-            mp_drawing_styles.get_default_hand_landmarks_style(),
-            mp_drawing_styles.get_default_hand_connections_style())
-    if results.right_hand_landmarks:
-        mp_drawing.draw_landmarks(
-            annotated_image,
-            results.right_hand_landmarks,
-            mp_holistic.HAND_CONNECTIONS,
-            mp_drawing_styles.get_default_hand_landmarks_style(),
-            mp_drawing_styles.get_default_hand_connections_style())
+    Illustrater.draw_landmarks_test(annotated_image, results)
+    
+
 
     # display annotated image
     cv2.imshow("Annotated Image", annotated_image)
