@@ -7,7 +7,6 @@ from src.constants import Constants
 from src.utils import Utilities
 
 def check_wrist_posture(results, hand='left'):
-    
     # Define the wrist joints
     wrist_joints = {
         'left': Constants.LEFT_WRIST_JOINTS_IDX,
@@ -19,8 +18,11 @@ def check_wrist_posture(results, hand='left'):
         pose_landmarks_world = results.pose_world_landmarks.landmark
         wrist_landmarks_world = [Utilities.get_pose_coordinates_world(pose_landmarks_world, joint_index) for joint_index in wrist_joints[hand]]
         wrist_angle = Utilities.get_angle_world(wrist_landmarks_world)
-        if Utilities.is_wrist_posture_correct(wrist_angle):
-            print(f'Fix {hand} wrist posture.\n')
+        is_posture_correct = Utilities.is_wrist_posture_correct(wrist_angle)
+        print(f'{hand} wrist angle: {wrist_angle:.2f} degrees. {is_posture_correct}\n')
+        # if not is_posture_correct:
+        #     print(f'{hand} wrist posture is incorrect.\n')
+        return wrist_angle, is_posture_correct
             
 
             

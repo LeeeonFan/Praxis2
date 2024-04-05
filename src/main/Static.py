@@ -26,15 +26,16 @@ with mp_holistic.Holistic(
 
     # check hand posture and get feedbackx
     if results.left_hand_landmarks:
-        Checker.check_wrist_posture(results, hand='left')
+        left_wrist_angle, is_left_wrist_posture_correct = Checker.check_wrist_posture(results, hand='left')
     if results.right_hand_landmarks:
-        Checker.check_wrist_posture(results, hand='right')
-    Checker.check_DIP_posture(results)
+        right_wrist_angle, is_right_wrist_posture_correct = Checker.check_wrist_posture(results, hand='right')
+    # Checker.check_DIP_posture(results)
     
         
     # draw landmarks
     annotated_image = image.copy()
-    Illustrater.draw_landmarks_test(annotated_image, results)
+    Illustrater.draw_elbow_wrist_fingertip_landmarks(annotated_image, results, is_left_wrist_posture_correct, is_right_wrist_posture_correct)
+    Illustrater.draw_hand_landmarks(annotated_image, results)
     
 
 

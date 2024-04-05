@@ -29,25 +29,30 @@ MAX_DIP_ANGLE = 30
 
 # Drawing styles for hand landmarks
 
+BLUE_BGR = (255, 0, 0)
+RED_BGR = (0, 0, 255)
+
+RADIUS = 1
+
 NORMAL_HAND_LANDMARK_STYLE = {
     mp_drawing_styles._PALM_LANDMARKS:
         mp_drawing.DrawingSpec(
-            color=mp_drawing_styles._WHITE, thickness=mp_drawing_styles._THICKNESS_DOT, circle_radius=mp_drawing_styles._RADIUS),
+            color=mp_drawing_styles._WHITE, thickness=mp_drawing_styles._THICKNESS_FINGER, circle_radius=RADIUS),
     mp_drawing_styles._THUMP_LANDMARKS:
         mp_drawing.DrawingSpec(
-            color=mp_drawing_styles._WHITE, thickness=mp_drawing_styles._THICKNESS_DOT, circle_radius=mp_drawing_styles._RADIUS),
+            color=mp_drawing_styles._WHITE, thickness=mp_drawing_styles._THICKNESS_FINGER, circle_radius=RADIUS),
     mp_drawing_styles._INDEX_FINGER_LANDMARKS:
         mp_drawing.DrawingSpec(
-            color=mp_drawing_styles._WHITE, thickness=mp_drawing_styles._THICKNESS_DOT, circle_radius=mp_drawing_styles._RADIUS),
+            color=mp_drawing_styles._WHITE, thickness=mp_drawing_styles._THICKNESS_FINGER, circle_radius=RADIUS),
     mp_drawing_styles._MIDDLE_FINGER_LANDMARKS:
         mp_drawing.DrawingSpec(
-            color=mp_drawing_styles._WHITE, thickness=mp_drawing_styles._THICKNESS_DOT, circle_radius=mp_drawing_styles._RADIUS),
+            color=mp_drawing_styles._WHITE, thickness=mp_drawing_styles._THICKNESS_FINGER, circle_radius=RADIUS),
     mp_drawing_styles._RING_FINGER_LANDMARKS:
         mp_drawing.DrawingSpec(
-            color=mp_drawing_styles._WHITE, thickness=mp_drawing_styles._THICKNESS_DOT, circle_radius=mp_drawing_styles._RADIUS),
+            color=mp_drawing_styles._WHITE, thickness=mp_drawing_styles._THICKNESS_FINGER, circle_radius=RADIUS),
     mp_drawing_styles._PINKY_FINGER_LANDMARKS:
         mp_drawing.DrawingSpec(
-            color=mp_drawing_styles._WHITE, thickness=mp_drawing_styles._THICKNESS_DOT, circle_radius=mp_drawing_styles._RADIUS),
+            color=mp_drawing_styles._WHITE, thickness=mp_drawing_styles._THICKNESS_FINGER, circle_radius=RADIUS),
 }
 
 
@@ -55,7 +60,7 @@ NORMAL_HAND_LANDMARK_STYLE = {
 
 NORMAL_HAND_CONNECTION_STYLE = {
     mp_hands_connections.HAND_PALM_CONNECTIONS:
-        mp_drawing.DrawingSpec(color=mp_drawing_styles._WHITE, thickness=mp_drawing_styles._THICKNESS_WRIST_MCP),
+        mp_drawing.DrawingSpec(color=mp_drawing_styles._WHITE, thickness=mp_drawing_styles._THICKNESS_FINGER),
     mp_hands_connections.HAND_THUMB_CONNECTIONS:
         mp_drawing.DrawingSpec(color=mp_drawing_styles._WHITE, thickness=mp_drawing_styles._THICKNESS_FINGER),
     mp_hands_connections.HAND_INDEX_FINGER_CONNECTIONS:

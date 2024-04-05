@@ -12,7 +12,7 @@ def get_hand_coordinates(hand_landmarks, joint_index):
     
 
 def is_wrist_posture_correct(wrist_angle):
-    return wrist_angle > min(Constants.MAX_WRIST_EXTENSION_ANGLE, Constants.MAX_WRIST_FLEXION_ANGLE)
+    return wrist_angle < max(Constants.MAX_WRIST_EXTENSION_ANGLE, Constants.MAX_WRIST_FLEXION_ANGLE)
     
 def is_DIP_bent(DIP_angle):
     return DIP_angle > Constants.MAX_DIP_ANGLE
