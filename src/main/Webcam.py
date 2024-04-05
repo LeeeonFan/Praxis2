@@ -9,6 +9,10 @@ mp_drawing = mp.solutions.drawing_utils
 mp_drawing_styles = mp.solutions.drawing_styles
 mp_holistic = mp.solutions.holistic
 
+# initial values
+is_left_wrist_posture_correct = True
+is_right_wrist_posture_correct = True
+
 cap = cv2.VideoCapture(0)
 frame_counter = 0
 frame_skip = 23  # Change this to the number of frames you want to skip
@@ -30,9 +34,6 @@ with mp_holistic.Holistic(
     image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
     results = holistic.process(image)
     
-    # initial values
-    is_left_wrist_posture_correct = None
-    is_right_wrist_posture_correct = None
     
     # Skip frames
     frame_counter += 1

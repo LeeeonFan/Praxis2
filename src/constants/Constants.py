@@ -20,7 +20,7 @@ RING_DIP_JOINTS_IDX = [mp_holistic.HandLandmark.RING_FINGER_PIP, mp_holistic.Han
 PINKY_DIP_JOINTS_IDX = [mp_holistic.HandLandmark.PINKY_PIP, mp_holistic.HandLandmark.PINKY_DIP, mp_holistic.HandLandmark.PINKY_TIP]
 
 # Wrist posture (unit: degree, meter)
-MAX_WRIST_EXTENSION_ANGLE = 5
+MAX_WRIST_EXTENSION_ANGLE = 26.6
 MAX_WRIST_FLEXION_ANGLE = 26.6
 EPSILON_Z = 0.1
 
