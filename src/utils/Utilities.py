@@ -1,4 +1,7 @@
+import mediapipe as mp
 import numpy as np
+from typing import Mapping, Tuple
+
 
 import sys
 sys.path.append('.')
@@ -68,3 +71,18 @@ def get_angle_world(landmarks_world):
 
 def denormalize_world_coordinates(joint_coordinates, width, height):
     return joint_coordinates[0] * width, joint_coordinates[1] * height, joint_coordinates[2] * width
+
+
+def get_hand_landmarks_style(adjusted_hand_landmark_style) -> Mapping[int, mp.solutions.drawing_utils.DrawingSpec]:
+  hand_landmark_style = {}
+  for k, v in adjusted_hand_landmark_style.items():
+    for landmark in k:
+      hand_landmark_style[landmark] = v
+  return hand_landmark_style
+
+def get_hand_connections_style(adjusted_hand_connection_style) -> Mapping[Tuple[int, int], mp.solutions.drawing_utils.DrawingSpec]:
+  hand_connection_style = {}
+  for k, v in adjusted_hand_connection_style.items():
+    for connection in k:
+      hand_connection_style[connection] = v
+  return hand_connection_style

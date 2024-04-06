@@ -29,13 +29,14 @@ with mp_holistic.Holistic(
         left_wrist_angle, is_left_wrist_posture_correct = Checker.check_wrist_posture(results, hand='left')
     if results.right_hand_landmarks:
         right_wrist_angle, is_right_wrist_posture_correct = Checker.check_wrist_posture(results, hand='right')
-    # Checker.check_DIP_posture(results)
+    left_hand_results, right_hand_results = Checker.check_DIP_posture(results)
     
         
     # draw landmarks
     annotated_image = image.copy()
     Illustrater.draw_elbow_wrist_fingertip_landmarks(annotated_image, results, is_left_wrist_posture_correct, is_right_wrist_posture_correct)
-    Illustrater.draw_hand_landmarks(annotated_image, results)
+    # Illustrater.draw_hand_landmarks(annotated_image, results)
+    Illustrater.draw_hand_landmarks_test(annotated_image, results, left_hand_results, right_hand_results)
     
 
 

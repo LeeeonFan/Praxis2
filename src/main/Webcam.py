@@ -50,7 +50,7 @@ with mp_holistic.Holistic(
     # draw elbow, wrist, fingertip landmarks
     annotated_image = image.copy()
     Illustrater.draw_elbow_wrist_fingertip_landmarks(annotated_image, results, is_left_wrist_posture_correct, is_right_wrist_posture_correct)
-    # Illustrater.draw_hand_landmarks(annotated_image, results)
+    Illustrater.draw_hand_landmarks(annotated_image, results)
 
 
     # display annotated image, click esc to exit

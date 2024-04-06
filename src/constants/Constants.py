@@ -1,6 +1,5 @@
-from typing import Mapping, Tuple
-
 import mediapipe as mp
+from typing import Mapping, Tuple
 
 mp_drawing = mp.solutions.drawing_utils
 mp_drawing_styles = mp.solutions.drawing_styles
@@ -32,27 +31,30 @@ MAX_DIP_ANGLE = 30
 BLUE_BGR = (255, 0, 0)
 RED_BGR = (0, 0, 255)
 
+MP_WHITE = mp_drawing_styles._WHITE
+MP_RED = mp_drawing_styles._RED
+
 RADIUS = 1
 
 NORMAL_HAND_LANDMARK_STYLE = {
     mp_drawing_styles._PALM_LANDMARKS:
         mp_drawing.DrawingSpec(
-            color=mp_drawing_styles._WHITE, thickness=mp_drawing_styles._THICKNESS_FINGER, circle_radius=RADIUS),
+            color=MP_WHITE, thickness=mp_drawing_styles._THICKNESS_FINGER, circle_radius=RADIUS),
     mp_drawing_styles._THUMP_LANDMARKS:
         mp_drawing.DrawingSpec(
-            color=mp_drawing_styles._WHITE, thickness=mp_drawing_styles._THICKNESS_FINGER, circle_radius=RADIUS),
+            color=MP_WHITE, thickness=mp_drawing_styles._THICKNESS_FINGER, circle_radius=RADIUS),
     mp_drawing_styles._INDEX_FINGER_LANDMARKS:
         mp_drawing.DrawingSpec(
-            color=mp_drawing_styles._WHITE, thickness=mp_drawing_styles._THICKNESS_FINGER, circle_radius=RADIUS),
+            color=MP_WHITE, thickness=mp_drawing_styles._THICKNESS_FINGER, circle_radius=RADIUS),
     mp_drawing_styles._MIDDLE_FINGER_LANDMARKS:
         mp_drawing.DrawingSpec(
-            color=mp_drawing_styles._WHITE, thickness=mp_drawing_styles._THICKNESS_FINGER, circle_radius=RADIUS),
+            color=MP_WHITE, thickness=mp_drawing_styles._THICKNESS_FINGER, circle_radius=RADIUS),
     mp_drawing_styles._RING_FINGER_LANDMARKS:
         mp_drawing.DrawingSpec(
-            color=mp_drawing_styles._WHITE, thickness=mp_drawing_styles._THICKNESS_FINGER, circle_radius=RADIUS),
+            color=MP_WHITE, thickness=mp_drawing_styles._THICKNESS_FINGER, circle_radius=RADIUS),
     mp_drawing_styles._PINKY_FINGER_LANDMARKS:
         mp_drawing.DrawingSpec(
-            color=mp_drawing_styles._WHITE, thickness=mp_drawing_styles._THICKNESS_FINGER, circle_radius=RADIUS),
+            color=MP_WHITE, thickness=mp_drawing_styles._THICKNESS_FINGER, circle_radius=RADIUS),
 }
 
 
@@ -60,17 +62,17 @@ NORMAL_HAND_LANDMARK_STYLE = {
 
 NORMAL_HAND_CONNECTION_STYLE = {
     mp_hands_connections.HAND_PALM_CONNECTIONS:
-        mp_drawing.DrawingSpec(color=mp_drawing_styles._WHITE, thickness=mp_drawing_styles._THICKNESS_FINGER),
+        mp_drawing.DrawingSpec(color=MP_WHITE, thickness=mp_drawing_styles._THICKNESS_FINGER),
     mp_hands_connections.HAND_THUMB_CONNECTIONS:
-        mp_drawing.DrawingSpec(color=mp_drawing_styles._WHITE, thickness=mp_drawing_styles._THICKNESS_FINGER),
+        mp_drawing.DrawingSpec(color=MP_WHITE, thickness=mp_drawing_styles._THICKNESS_FINGER),
     mp_hands_connections.HAND_INDEX_FINGER_CONNECTIONS:
-        mp_drawing.DrawingSpec(color=mp_drawing_styles._WHITE, thickness=mp_drawing_styles._THICKNESS_FINGER),
+        mp_drawing.DrawingSpec(color=MP_WHITE, thickness=mp_drawing_styles._THICKNESS_FINGER),
     mp_hands_connections.HAND_MIDDLE_FINGER_CONNECTIONS:
-        mp_drawing.DrawingSpec(color=mp_drawing_styles._WHITE, thickness=mp_drawing_styles._THICKNESS_FINGER),
+        mp_drawing.DrawingSpec(color=MP_WHITE, thickness=mp_drawing_styles._THICKNESS_FINGER),
     mp_hands_connections.HAND_RING_FINGER_CONNECTIONS:
-        mp_drawing.DrawingSpec(color=mp_drawing_styles._WHITE, thickness=mp_drawing_styles._THICKNESS_FINGER),
+        mp_drawing.DrawingSpec(color=MP_WHITE, thickness=mp_drawing_styles._THICKNESS_FINGER),
     mp_hands_connections.HAND_PINKY_FINGER_CONNECTIONS:
-        mp_drawing.DrawingSpec(color=mp_drawing_styles._WHITE, thickness=mp_drawing_styles._THICKNESS_FINGER)
+        mp_drawing.DrawingSpec(color=MP_WHITE, thickness=mp_drawing_styles._THICKNESS_FINGER)
 }
 
 def get_normal_hand_landmarks_style() -> Mapping[int, mp.solutions.drawing_utils.DrawingSpec]:

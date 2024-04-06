@@ -37,6 +37,19 @@ def check_DIP_posture(results):
         'pinky': Constants.PINKY_DIP_JOINTS_IDX,
         # Add other fingers here
     }
+    
+    left_hand_results = {
+        'index': True,
+        'middle': True,
+        'ring': True,
+        'pinky': True,
+    }
+    right_hand_results = {
+        'index': True,
+        'middle': True,
+        'ring': True,
+        'pinky': True,
+    }
 
     # Check left hand
     if results.left_hand_landmarks:
@@ -44,8 +57,10 @@ def check_DIP_posture(results):
         for finger, joints in finger_DIP_joints.items():
             finger_DIP_landmarks = [Utilities.get_hand_coordinates(left_hand_landmarks, joint_index) for joint_index in joints]
             finger_DIP_angle = Utilities.get_angle(finger_DIP_landmarks)
-            if Utilities.is_DIP_bent(finger_DIP_angle):
-                print(f'Fix left {finger} finger posture.\n')
+            is_left_DIP_correct = Utilities.is_DIP_bent(finger_DIP_angle)
+            # print(f'left {finger} finger DIP angle: {finger_DIP_angle:.2f} degrees. {is_left_DIP_correct}\n')
+            if not is_left_DIP_correct:
+                left_hand_results[finger] = False
 
     # Check right hand
     if results.right_hand_landmarks:
@@ -53,7 +68,13 @@ def check_DIP_posture(results):
         for finger, joints in finger_DIP_joints.items():
             finger_DIP_landmarks = [Utilities.get_hand_coordinates(right_hand_landmarks, joint_index) for joint_index in joints]
             finger_DIP_angle = Utilities.get_angle(finger_DIP_landmarks)
-            if Utilities.is_DIP_bent(finger_DIP_angle):
-                print(f'Fix right {finger} finger posture.\n')
+            is_right_DIP_correct = Utilities.is_DIP_bent(finger_DIP_angle)
+            # print(f'right {finger} finger DIP angle: {finger_DIP_angle:.2f} degrees. {is_right_DIP_correct}\n')
+            if not is_right_DIP_correct:
+                right_hand_results[finger] = False
+                
+    return left_hand_results, right_hand_results
+                
+                
 
                 
